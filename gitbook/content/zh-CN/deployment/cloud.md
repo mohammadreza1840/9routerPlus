@@ -16,7 +16,7 @@
 ### 步骤 1:克隆仓库
 
 ```bash
-git clone https://github.com/decolua/9router.git
+git clone https://github.com/mohammadreza1840/9routerPlus.git
 cd 9router/app
 ```
 

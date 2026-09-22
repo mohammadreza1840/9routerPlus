@@ -5,7 +5,7 @@ description: Generate or edit images via 9Router /v1/images/generations using Op
 
 # 9Router — Image Generation
 
-Requires `NINEROUTER_URL` (and `NINEROUTER_KEY` if auth enabled). See https://raw.githubusercontent.com/decolua/9router/refs/heads/master/skills/9router/SKILL.md for setup.
+Requires `NINEROUTER_URL` (and `NINEROUTER_KEY` if auth enabled). See https://raw.githubusercontent.com/mohammadreza1840/9routerPlus/refs/heads/master/skills/9router/SKILL.md for setup.
 
 ## Discover
 

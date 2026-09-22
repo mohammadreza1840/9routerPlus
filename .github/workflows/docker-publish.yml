@@ -8,7 +8,7 @@ on:
 
 env:
   GHCR_IMAGE: ghcr.io/${{ github.repository }}
-  DOCKERHUB_IMAGE: decolua/9router
+  DOCKERHUB_IMAGE: mohammadreza1840/9routerPlus
 
 jobs:
   build-and-push:

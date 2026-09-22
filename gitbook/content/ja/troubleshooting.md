@@ -346,6 +346,6 @@
 
 ## さらにヘルプが必要?
 
-- **GitHub Issues:** [github.com/decolua/9router/issues](https://github.com/decolua/9router/issues)
+- **GitHub Issues:** [github.com/mohammadreza1840/9routerPlus/issues](https://github.com/mohammadreza1840/9routerPlus/issues)
 - **ドキュメント:** [9router.com/docs](https://9router.com/docs)
 - **FAQ:** [faq.md](faq.md)
