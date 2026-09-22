@@ -1,6 +1,7 @@
 services:
   9router:
-    image: mohammadreza1840/9routerPlus:latest
+    build: .
+    image: mohammadreza1840/9routerplus:latest
     container_name: 9router
     restart: always
     ports:
