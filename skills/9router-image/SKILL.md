@@ -1,6 +1,6 @@
 ---
 name: 9router-image
-description: Generate images via 9Router /v1/images/generations using OpenAI / Gemini Imagen / DALL-E / FLUX / MiniMax / SDWebUI / ComfyUI / Codex models. Use when the user wants to create, generate, draw, or render an image, picture, or text-to-image (txt2img).
+description: Generate or edit images via 9Router /v1/images/generations using OpenAI / Gemini Imagen / Antigravity / DALL-E / FLUX / MiniMax / SDWebUI / ComfyUI / Codex models. Use when the user wants to create, generate, draw, render, or edit an image (img2img/txt2img).
 ---
 
 # 9Router — Image Generation
@@ -54,6 +54,23 @@ const { data } = await r.json();
 console.log(data[0].url || data[0].b64_json.slice(0, 40));
 ```
 
+Image-to-Image (Edit) using Antigravity:
+
+```js
+const r = await fetch(`${process.env.NINEROUTER_URL}/v1/images/generations`, {
+  method: "POST",
+  headers: { "Authorization": `Bearer ${process.env.NINEROUTER_KEY}`, "Content-Type": "application/json" },
+  body: JSON.stringify({ 
+    model: "antigravity/gemini-3.1-flash-image", 
+    prompt: "remove logos and watermarks", 
+    image: "data:image/png;base64,iVBORw0KGgo...", // Reference image (base64 or URL)
+  }),
+});
+const { data } = await r.json();
+console.log(data[0].b64_json ? "Success" : "Failed");
+```
+
+
 ## Response shape
 
 JSON (default `response_format=url`):
@@ -75,6 +92,7 @@ Common fields above work everywhere. These add/override:
 | Provider | Extra/changed fields | Notes |
 |---|---|---|
 | `openai`, `minimax`, `openrouter`, `recraft` | `quality`, `style`, `response_format` | Standard OpenAI shape |
+| `antigravity` | `image` (edit mode) | `size` → aspect ratio suffix; natively supports `gemini-3.1-flash-image` |
 | `gemini` (nano-banana) | — | Only `prompt`; ignores `size`/`n` |
 | `codex` (gpt-5.4-image) | `image`, `images[]`, `image_detail`, `output_format`, `background` | SSE stream; **ChatGPT Plus/Pro required** |
 | `huggingface` | — | Only `prompt`; returns single image |
